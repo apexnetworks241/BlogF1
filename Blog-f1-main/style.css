@@ -1,0 +1,259 @@
+:root {
+    --bg-primary: #f9f9f9;
+    --bg-card: #ffffff;
+    --text-primary: #222222;
+    --text-secondary: #444444;
+    --accent: #c00000;
+    --accent-hover: #a00000;
+    --border: #e0e0e0;
+    --footer-bg: #000000;
+    --nav-bg: #000000;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --card-shadow-hover: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Estilos para modo escuro */
+.dark-mode {
+    --bg-primary: #121212;
+    --bg-card: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #bbbbbb;
+    --accent: #ff3333;
+    --accent-hover: #ff5555;
+    --border: #333333;
+    --footer-bg: #0a0a0a;
+    --nav-bg: #0a0a0a;
+    --card-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    --card-shadow-hover: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, var(--accent), var(--nav-bg));
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.3rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Botão de modo escuro */
+#modo-toggle {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+/* Navegação */
+nav {
+    background-color: var(--nav-bg);
+    padding: 0.9rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+}
+
+nav a {
+    color: #ddd;
+    font-weight: 600;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: white;
+    background-color: var(--accent);
+}
+
+/* Seções principais */
+section {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+}
+
+h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Destaque */
+.destaque {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.destaque h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.destaque p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Grid de cards */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+
+.card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--text-primary);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.card h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Calendário */
+.evento {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-primary);
+}
+
+.evento strong {
+    color: var(--accent);
+}
+
+/* Próxima corrida */
+.proxima-corrida {
+    background: linear-gradient(to right, var(--nav-bg), #2a2a2a);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.proxima-corrida h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.contador {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 0.5rem;
+}
+
+/* Rodapé */
+footer {
+    background: var(--footer-bg);
+    color: #aaa;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #ffcc00;
+    margin: 0 0.8rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    #modo-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .card, .destaque, .proxima-corrida {
+        padding: 1.2rem;
+    }
+}
