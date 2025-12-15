@@ -1,106 +1,142 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🏎️ F1 Blog — Notícias da Fórmula 1</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon embutido com emoji de bandeira quadriculada -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏁</text></svg>">
 </head>
 <body>
-    <!-- Botão de alternar modo escuro/claro -->
-    <button id="modo-toggle" aria-label="Alternar modo claro/escuro">🌓</button>
 
-    <header>
-        <h1><img src="img/Artboard 1.png" alt="" width="220"> </h1>
-        <p>Notícias, análises, pilotos, equipes e o calendário completo da Fórmula 1</p>
-    </header>
-
-    <nav>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">F1 Blog</div>
+      <nav class="nav-menu" id="nav-menu">
         <ul>
-            <li><a href="#inicio" class="active">Início</a></li>
-            <li><a href="#pilotos">Pilotos</a></li>
-            <li><a href="#equipes">Equipes</a></li>
-            <li><a href="#calendario">Calendário</a></li>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#news">Notícias</a></li>
+          <li><a href="#add-news">Adicionar Notícia</a></li>
+          <li><a href="#manage-news">Gerenciar Notícias</a></li>
         </ul>
-    </nav>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Últimas Notícias</h2>
-            <div class="destaque">
-                <h3>Max Verstappen é campeão mundial de F1 pela 5ª vez em 2025!</h3>
-                <p>O holandês da Red Bull Racing dominou a temporada com 14 vitórias e quebrou o recorde de pontos em uma única temporada. Confira a análise completa da campanha impecável.</p>
-            </div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <h1>Acompanhe o Mundo da Fórmula 1</h1>
+      <p>Notícias em tempo real, análises de corridas, bastidores das equipes e muito mais!</p>
+      <a href="#add-news" class="btn cta">Publicar Notícia</a>
+    </div>
+  </section>
 
-            <div class="proxima-corrida">
-                <h3>Próxima Corrida: Grande Prêmio de Abu Dhabi 🇦🇪</h3>
-                <p>Yas Marina Circuit – 14 de dezembro de 2025</p>
-                <div class="contador">Faltam 5 dias!</div>
-            </div>
-        </section>
+  <!-- Search Bar -->
+  <section class="search-section">
+    <div class="container">
+      <input type="text" id="search-input" placeholder="Buscar notícias por equipe, piloto ou termo..." />
+    </div>
+  </section>
 
-        <section id="pilotos">
-            <h2>Principais Pilotos da Temporada 2025</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🇳🇱 Max Verstappen</h3>
-                    <p>Campeão mundial com a Red Bull Racing. Dominância técnica e mental impressionante.</p>
-                </div>
-                <div class="card">
-                    <h3>🇬🇧 Lewis Hamilton</h3>
-                    <p>Em sua 1ª temporada pela Ferrari, já conquistou 3 vitórias e está no pódio do campeonato.</p>
-                </div>
-                <div class="card">
-                    <h3>🇦🇺 Oscar Piastri</h3>
-                    <p>O jovem da McLaren superou as expectativas e se firmou como um dos melhores da nova geração.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Slider de Destaque -->
+  <section class="slider-section">
+    <div class="container">
+      <h2>Em Destaque</h2>
+      <div class="slider" id="slider">
+        <div class="slide active">
+          <h3>GP do Brasil: Verstappen vence em Interlagos!</h3>
+          <p>Max Verstappen conquista sua 10ª vitória na temporada...</p>
+        </div>
+        <div class="slide">
+          <h3>Ferrari anuncia nova parceria tecnológica</h3>
+          <p>A Scuderia firma aliança com gigante da energia...</p>
+        </div>
+        <div class="slide">
+          <h3>Norris empolga em Austin com pódio</h3>
+          <p>McLaren segue em ascensão na luta pelo construtores...</p>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button id="prev-slide">‹</button>
+        <button id="next-slide">›</button>
+      </div>
+    </div>
+  </section>
 
-        <section id="equipes">
-            <h2>Equipes em Destaque</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🟥 Red Bull Racing</h3>
-                    <p>Campeã de construtores pelo 4º ano consecutivo. Tecnologia de ponta e estratégia impecável.</p>
-                </div>
-                <div class="card">
-                    <h3>🟡 Ferrari</h3>
-                    <p>Renovada com Hamilton, a Scuderia voltou a brigar por títulos após anos de ausência no topo.</p>
-                </div>
-                <div class="card">
-                    <h3>🪽 McLaren</h3>
-                    <p>Desempenho consistente e inovações aerodinâmicas colocaram a equipe no top 3 do campeonato.</p>
-                </div>
-            </div>
-        </section>
+  <!-- Cards de Notícias -->
+  <section id="news" class="news-section">
+    <div class="container">
+      <h2>Últimas Notícias</h2>
+      <div class="cards" id="news-cards">
+        <!-- Notícias dinâmicas aqui -->
+      </div>
+    </div>
+  </section>
 
-        <section id="calendario">
-            <h2>Calendário da Fórmula 1 – 2025</h2>
-            <div class="evento">
-                <strong>1º dez – GP do Brasil 🇧🇷</strong><br>
-                Interlagos – São Paulo
-            </div>
-            <div class="evento">
-                <strong>14 dez – GP de Abu Dhabi 🇦🇪</strong><br>
-                Yas Marina Circuit – Final da temporada
-            </div>
-            <div class="evento">
-                <strong>16 mar – GP do Bahrein 🇧🇭</strong><br>
-                Abertura da temporada 2026
-            </div>
-        </section>
-    </main>
+  <!-- Formulário para Adicionar Notícia -->
+  <section id="add-news" class="add-news-section">
+    <div class="container">
+      <h2>Adicionar Nova Notícia</h2>
+      <form id="news-form">
+        <input type="text" id="title" placeholder="Título da notícia" required />
+        <textarea id="content" placeholder="Conteúdo da notícia..." rows="4" required></textarea>
 
-    <footer>
-        <p>© 2025 F1Blog – Independente e apaixonado por Fórmula 1</p>
-        <p>
-            <a href="mailto:contato@f1blog.com">Contato</a> |
-            <a href="#">Política de Privacidade</a> |
-            <a href="#">Redes Sociais</a>
-        </p>
-        <p>Este site não é afiliado à Formula One World Championship Limited.</p>
-    </footer>
+        <label for="team">Equipe:</label>
+        <select id="team" required>
+          <option value="">Selecione</option>
+          <option value="Red Bull Racing">Red Bull Racing</option>
+          <option value="Ferrari">Ferrari</option>
+          <option value="Mercedes">Mercedes</option>
+          <option value="McLaren">McLaren</option>
+          <option value="Aston Martin">Aston Martin</option>
+          <option value="Alpine">Alpine</option>
+          <option value="Williams">Williams</option>
+          <option value="Haas">Haas</option>
+          <option value="RB">RB (Racing Bulls)</option>
+          <option value="Kick Sauber">Kick Sauber</option>
+        </select>
+
+        <label for="drivers">Pilotos (até 2):</label>
+        <select id="drivers" multiple size="4" required>
+          <!-- Preenchido dinamicamente -->
+        </select>
+
+        <button type="submit" class="btn">Publicar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gerenciar Notícias -->
+  <section id="manage-news" class="manage-news-section">
+    <div class="container">
+      <h2>Gerenciar Notícias</h2>
+      <p>Exclua ou revise as notícias publicadas.</p>
+      <div id="manage-list" class="manage-list">
+        <!-- Lista de gerenciamento -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 F1 Blog — Feito com 🏁 para fãs de Fórmula 1.</p>
+      <div class="footer-links">
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+        <a href="#">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
