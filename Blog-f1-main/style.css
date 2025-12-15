@@ -330,3 +330,7 @@ body {
     align-self: flex-start;
   }
 }
+.mover-img {
+    position: relative;
+    top: -9px;
+  }

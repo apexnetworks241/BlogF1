@@ -1,14 +1,14 @@
 // Dados de pilotos por equipe (2025)
 const driversByTeam = {
     "Red Bull Racing": ["Max Verstappen", "Yuki Tsunoda"],
-    "Ferrari": ["Charles Leclerc", ""],
-    "Mercedes": ["Lewis Hamilton", "George Russell"],
+    "Ferrari": ["Charles Leclerc", "Lewis Hamilton"],
+    "Mercedes": ["Kimi Antonelli", "George Russell"],
     "McLaren": ["Lando Norris", "Oscar Piastri"],
     "Aston Martin": ["Fernando Alonso", "Lance Stroll"],
     "Alpine": ["Pierre Gasly", "Franco Colapinto"],
     "Williams": ["Alexander Albon", "Carlos Sainz"],
-    "Haas": ["Nico Hülkenberg", "Oliver Bearman"],
-    "RB": ["Daniel Ricciardo", "Yuki Tsunoda"],
+    "Haas": ["Esteban Ocon", "Oliver Bearman"],
+    "RB": ["Liam Lawson", "Isack Hadjar"],
     "Kick Sauber": ["Gabriel Bortoleto", "Nico Hülkenberg"]
   };
   
@@ -206,3 +206,4 @@ const driversByTeam = {
       showSlide(currentSlide);
     }, 5000);
   });
+
